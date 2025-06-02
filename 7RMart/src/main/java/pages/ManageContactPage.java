@@ -7,6 +7,7 @@ import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 
 import utilities.PageUtility;
+import utilities.WaitUtility;
 
 public class ManageContactPage {
 	
@@ -84,6 +85,8 @@ public class ManageContactPage {
 	public void clickUpdateButton() {
 		
 		javaScriptExcecuter();
+		WaitUtility wait_utility = new WaitUtility();
+		wait_utility.waitForVisibilityOfElementLocated(driver, update_btn);
 		update_btn.click();
 	}
 	
