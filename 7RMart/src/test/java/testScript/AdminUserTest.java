@@ -12,7 +12,7 @@ import utilities.FakerUtility;
 
 public class AdminUserTest extends Base{
 	
-	@Test
+	@Test(retryAnalyzer = reTry.ReTry.class)
 	
 	public void verifyTheUserIsAbleToAddAdminUser() throws IOException {
 			
