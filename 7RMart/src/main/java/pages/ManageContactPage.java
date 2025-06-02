@@ -6,6 +6,8 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 
+import utilities.PageUtility;
+
 public class ManageContactPage {
 	
 	WebDriver driver;
@@ -34,6 +36,13 @@ public class ManageContactPage {
 		address_txt.clear();
 		del_time_txt.clear();
 		del_charge_txt.clear();
+	}
+	
+	public void javaScriptExcecuter() {
+
+		PageUtility pageUtility = new PageUtility();
+		pageUtility.usingJavaScriptExcecuter(driver, "window.scrollBy(0,document.body.scrollHeight)", "");
+
 	}
 	
 	public void clcickManageContact() {
@@ -74,6 +83,7 @@ public class ManageContactPage {
 	
 	public void clickUpdateButton() {
 		
+		javaScriptExcecuter();
 		update_btn.click();
 	}
 	
