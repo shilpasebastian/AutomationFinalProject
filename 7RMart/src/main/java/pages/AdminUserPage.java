@@ -17,7 +17,6 @@ public class AdminUserPage {
 		PageFactory.initElements(driver, this);
 		
 	}	
-	@FindBy(xpath="//a[contains(@class,'small-box-footer') and contains(@href,'admin/list-admin')]") WebElement more_info_btn;
 	@FindBy(xpath="//a[@onclick='click_button(1)']") WebElement new_btn;
 	@FindBy(xpath="//input[@id='username']") WebElement userName_txt;
 	@FindBy(xpath="//input[@id='password']") WebElement password_txt;
@@ -26,37 +25,36 @@ public class AdminUserPage {
 	@FindBy(xpath="//div[@class='alert alert-success alert-dismissible']") WebElement alert_box;
 	
 	PageUtility page_utility=new PageUtility();
-	
-		
-	public void clickMoreInfo() {
-		
-		more_info_btn.click();
-	}
 
-	public void clickNewButton() {
+	public AdminUserPage clickNewButton() {
 		
 		new_btn.click();
+		return this;
 	}
 	
-	public void enterUserName(String username) {
+	public AdminUserPage enterUserName(String username) {
 		
 		userName_txt.sendKeys(username);
+		return this;
 	}
 	
-	public void enterPassword(String password) {
+	public AdminUserPage enterPassword(String password) {
 		
 		password_txt.sendKeys(password);
+		return this;
 	}
 	
-	public void selectUserTypeDropDwon(String value) {
+	public AdminUserPage selectUserTypeDropDwon(String value) {
 		
 		page_utility.selectByVisibleValue(userType_ddl, value);
+		return this;
 		
 	}
 	
-	public void clickSaveButton() {
+	public AdminUserPage clickSaveButton() {
 		
 		save_btn.click();
+		return this;
 	}
 	
 	public boolean isAlertDisplayed() {

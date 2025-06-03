@@ -20,7 +20,6 @@ public class ManageContactPage {
 		
 	}
 	
-	@FindBy(xpath="//a[contains(@class,'small-box-footer') and contains(@href,'admin/list-contact')]") WebElement mange_contact_btn;
 	@FindBy(xpath="//a[@role='button']") WebElement action_btn;
 	@FindBy(xpath="//input[@id='phone']") WebElement phone_txt;
 	@FindBy(xpath="//input[@id='email']") WebElement email_txt;
@@ -30,13 +29,14 @@ public class ManageContactPage {
 	@FindBy(xpath="//button[@name='Update']") WebElement update_btn;
 	@FindBy(xpath="//button[@data-dismiss='alert']") WebElement alert_box;
 	
-	public void clearAll() {
+	public ManageContactPage clearAll() {
 		
 		phone_txt.clear();
 		email_txt.clear();
 		address_txt.clear();
 		del_time_txt.clear();
 		del_charge_txt.clear();
+		return this;
 	}
 	
 	public void javaScriptExcecuter() {
@@ -46,48 +46,51 @@ public class ManageContactPage {
 
 	}
 	
-	public void clcickManageContact() {
-		
-		mange_contact_btn.click();
-	}
-	
-	public void clickActionButton() {
+	public ManageContactPage clickActionButton() {
 		
 		action_btn.click();
+		return this;
 	}
 	
-	public void enterPhoneNumber(String phone_number) {
+	public ManageContactPage enterPhoneNumber(String phone_number) {
 		
 		phone_txt.sendKeys(phone_number);
+		return this;
 
 	}
 	
-	public void enterEmai(String email) {
+	public ManageContactPage enterEmai(String email) {
 		
 		email_txt.sendKeys(email);
+		return this;
 	}
 	
-	public void enterAddress(String address) {
+	public ManageContactPage enterAddress(String address) {
 		
 		address_txt.sendKeys(address);
+		return this;
 	}
 	
-	public void enterDeliveryTime(String delivery_time) {
+	public ManageContactPage enterDeliveryTime(String delivery_time) {
 		
 		del_time_txt.sendKeys(delivery_time);
+		return this;
 	}
 	
-	public void enterDeliveryCharge(String delivery_charge) {
+	public ManageContactPage enterDeliveryCharge(String delivery_charge) {
 		
 		del_charge_txt.sendKeys(delivery_charge);
+		return this;
 	}
 	
-	public void clickUpdateButton() {
+	public ManageContactPage clickUpdateButton() {
 		
 		javaScriptExcecuter();
 		WaitUtility wait_utility = new WaitUtility();
 		wait_utility.waitForVisibilityOfElementLocated(driver, update_btn);
 		update_btn.click();
+		return this;
+		
 	}
 	
 	public boolean isAlertDisplayed() {

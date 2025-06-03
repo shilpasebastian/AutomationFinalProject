@@ -15,32 +15,27 @@ public class ManageNewsPage {
 		PageFactory.initElements(driver, this);
 	}
 	
-	@FindBy(xpath="//a[contains(@href,'list-news' )and contains(@class,'nav-link')]") WebElement manageNewsOPtion;
 	@FindBy(xpath ="//a[@class='btn btn-rounded btn-danger']") WebElement newBtn;
 	@FindBy(xpath ="//textarea[@id='news']") WebElement newsTextarea;
 	@FindBy(xpath ="//button[@type='submit']") WebElement saveBtn;
 	@FindBy(xpath ="//button[@data-dismiss='alert']") WebElement alert;
-
-
-	public void clickManageNewsOption() {
 	
-	manageNewsOPtion.click();
-	
-	}
-	
-	public void clickNewButton() {
+	public ManageNewsPage clickNewButton() {
 		
 		newBtn.click();
+		return this;
 	}
 	
-	public void enterNews(String news) {
+	public ManageNewsPage enterNews(String news) {
 		
 		newsTextarea.sendKeys(news);
+		return this;
 	}
 	
-	public void clickSaveButton() {
+	public ManageNewsPage clickSaveButton() {
 		
 		saveBtn.click();
+		return this;
 	}
 	
 	public boolean isAlertDisplayed() {

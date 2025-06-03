@@ -7,11 +7,11 @@ import org.testng.annotations.Test;
 
 import constant.Constants;
 import pages.AdminUserPage;
-import pages.LogOutPage;
+import pages.HomePage;
 import pages.LoginPage;
 import utilities.ExcelUtility;
 
-public class LogOutTest extends Base{
+public class HomeTest extends Base{
 	@Test(description="Verifying the user is able to logout")
 	
 	public void verifyTheUserIsAbleTologOut() throws IOException{
@@ -22,7 +22,7 @@ public class LogOutTest extends Base{
 	login_page.enterUserName(user_name);
 	login_page.enterPassword(password);
 	login_page.clickTheSignInButton();	
-	LogOutPage logout_page=new LogOutPage(driver);
+	HomePage logout_page=new HomePage(driver);
 	logout_page.clickAdminDropDwon();
 	logout_page.clickLogOutButton();
 	Boolean isUserNameFieldDisplayed=logout_page.isUserNameFieldDisplayed();

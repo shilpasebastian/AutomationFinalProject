@@ -23,8 +23,6 @@ public class ManageCategoryPage {
 
 	}
 
-	@FindBy(xpath = "//a[contains(@class,'small-box-footer') and contains(@href,'admin/list-category')]")
-	WebElement manage_category_btn;
 	@FindBy(xpath = "//a[contains(@href,'Category/add')]")
 	WebElement new_btn;
 	@FindBy(xpath = "//input[@id='category']")
@@ -59,27 +57,25 @@ public class ManageCategoryPage {
 
 	}
 
-	public void clickManageCategory() {
-
-		manage_category_btn.click();
-	}
-
-	public void clickNewButton() {
+	public ManageCategoryPage clickNewButton() {
 
 		new_btn.click();
+		return this;
 	}
 
-	public void enterCategory(String category) {
+	public ManageCategoryPage enterCategory(String category) {
 
 		category_txt.sendKeys(category);
+		return this;
 	}
 
-	public void selectGroup() {
+	public ManageCategoryPage selectGroup() {
 
 		group_select.click();
+		return this;
 	}
 
-	public void uploadImage() {
+	public ManageCategoryPage uploadImage() {
 
 		javaScriptExcecuter();
 
@@ -88,9 +84,11 @@ public class ManageCategoryPage {
 
 		FileUploadUtility file_upload_utility = new FileUploadUtility();
 		file_upload_utility.fileUploadUsingSendKeys(choose_btn, Constants.MOBILEIMAGE);
+		
+		return this;
 	}
 
-	public void selectTopMenuRadioButton(String value) {
+	public ManageCategoryPage selectTopMenuRadioButton(String value) {
 
 		if (value.contentEquals("yes")) {
 
@@ -99,9 +97,10 @@ public class ManageCategoryPage {
 
 			top_menu_no_rd.click();
 		}
+		return this;
 	}
 
-	public void selectLeftMenuRadioButton(String value) {
+	public ManageCategoryPage selectLeftMenuRadioButton(String value) {
 
 		if (value.contentEquals("yes")) {
 
@@ -110,11 +109,14 @@ public class ManageCategoryPage {
 
 			left_menu_no_rd.click();
 		}
+		
+		return this;
 	}
 
-	public void clickSaveButton() {
+	public ManageCategoryPage clickSaveButton() {
 
 		save_btn.click();
+		return this;
 
 	}
 
@@ -123,11 +125,12 @@ public class ManageCategoryPage {
 		return alert_box.isDisplayed();
 	}
 
-	public void clickDelete(String category_name) {	
+	public ManageCategoryPage clickDelete(String category_name) {	
 			
 		WebElement del_btn=driver.findElement(By.xpath("//tr[td[contains(text(),'"+category_name+"')]]//a[contains(@href,'category/delete')]"));
 		del_btn.click();
 		driver.switchTo().alert().accept();
+		return this;
 		
 
 	}
