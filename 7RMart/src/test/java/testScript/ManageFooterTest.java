@@ -5,6 +5,7 @@ import java.io.IOException;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 
+import constant.Constants;
 import pages.LoginPage;
 import pages.ManageFooterPage;
 import utilities.ExcelUtility;
@@ -12,7 +13,7 @@ import utilities.FakerUtility;
 
 public class ManageFooterTest extends Base {
 	
-	@Test
+	@Test(description = "Verifying the update button is displayed")
 	
 	public void verifyTheUpdateButtonIsDisplayed() throws IOException{
 		
@@ -27,11 +28,11 @@ public class ManageFooterTest extends Base {
 		manage_footer_page.clickManageFooter();	
 		manage_footer_page.clickActionButton();
 		Boolean isUpdateButtonDisplayed=manage_footer_page.isUpdateButtonDisplayed();
-		Assert.assertTrue(isUpdateButtonDisplayed);
+		Assert.assertTrue(isUpdateButtonDisplayed,Constants.MANAGE_FOOTER_UPDATEBUTTON__DISPLAY);
 		
 	}
 	
-	@Test
+	@Test(description="Verifying the user is able to manage footer text")
 
 	public void verifyTheUserIsAbleToManageFooterText() throws IOException {
 
@@ -55,7 +56,7 @@ public class ManageFooterTest extends Base {
 		manage_footer_page.enterPhoneNumber(phone_number);
 		manage_footer_page.clickUpdateButton();
 		Boolean isAlertDisplayed=manage_footer_page.isAlertDisplayed();
-		Assert.assertTrue(isAlertDisplayed);
+		Assert.assertTrue(isAlertDisplayed,Constants.MANAGE_FOOTER_TEXT);
 		
 	}
 

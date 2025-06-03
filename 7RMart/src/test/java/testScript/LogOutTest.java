@@ -5,13 +5,14 @@ import java.io.IOException;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 
+import constant.Constants;
 import pages.AdminUserPage;
 import pages.LogOutPage;
 import pages.LoginPage;
 import utilities.ExcelUtility;
 
 public class LogOutTest extends Base{
-	@Test
+	@Test(description="Verifying the user is able to logout")
 	
 	public void verifyTheUserIsAbleTologOut() throws IOException{
 	
@@ -25,7 +26,7 @@ public class LogOutTest extends Base{
 	logout_page.clickAdminDropDwon();
 	logout_page.clickLogOutButton();
 	Boolean isUserNameFieldDisplayed=logout_page.isUserNameFieldDisplayed();
-	Assert.assertTrue(isUserNameFieldDisplayed);
+	Assert.assertTrue(isUserNameFieldDisplayed,Constants.LOGOUT);
 	
 	
 	}

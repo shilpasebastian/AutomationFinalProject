@@ -5,13 +5,14 @@ import java.io.IOException;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 
+import constant.Constants;
 import pages.LoginPage;
 import pages.ManageNewsPage;
 import utilities.ExcelUtility;
 
 public class ManageNewsTest extends Base{
 	
-	@Test
+	@Test(description="Verifying the user is able to add manage news")
 	
 	public void verifyTheUserIsAbleToAddMangeNews() throws IOException {
 		
@@ -28,7 +29,7 @@ public class ManageNewsTest extends Base{
 		mange_news_page.enterNews(news);
 		mange_news_page.clickSaveButton();
 		Boolean isAlertDisplayed=mange_news_page.isAlertDisplayed();
-		Assert.assertTrue(isAlertDisplayed);
+		Assert.assertTrue(isAlertDisplayed,Constants.MANAGE_NEWS);
 		
 	}
 

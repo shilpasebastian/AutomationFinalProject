@@ -5,13 +5,14 @@ import java.io.IOException;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 
+import constant.Constants;
 import pages.LoginPage;
 import pages.ManageContactPage;
 import utilities.ExcelUtility;
 
 public class ManageContactTest extends Base{
 	
-	@Test
+	@Test(description = "Verifying the update button is displayed")
 	
 	public void verifyTheUpdateButtonIsDisplayed() throws IOException{
 		
@@ -26,11 +27,11 @@ public class ManageContactTest extends Base{
 		manage_contact_page.clcickManageContact();
 		manage_contact_page.clickActionButton();
 		Boolean isUpdateButtonDisplayed=manage_contact_page.isUpdateButtonDisplayed();
-		Assert.assertTrue(isUpdateButtonDisplayed);
+		Assert.assertTrue(isUpdateButtonDisplayed,Constants.MANAGE_CONTACT_UPDATEBUTTON__DISPLAY);
 		
 	}
 	
-	@Test
+	@Test(description="Verifying the user is able to edit contact")
 	
 	public void verifyUserIsAbleToEditContact() throws IOException{
 		
@@ -52,7 +53,7 @@ public class ManageContactTest extends Base{
 		manage_contact_page.enterDeliveryCharge(ExcelUtility.getIntegerData(1, 4, "managecontact"));
 		manage_contact_page.clickUpdateButton();
 		Boolean isAlertDisplayed=manage_contact_page.isAlertDisplayed();
-		Assert.assertTrue(isAlertDisplayed);
+		Assert.assertTrue(isAlertDisplayed,Constants.MANAGE_CONTACT_EDIT__CONTACT);
 	}
 
 }

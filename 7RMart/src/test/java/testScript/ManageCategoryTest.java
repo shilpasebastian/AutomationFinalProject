@@ -13,7 +13,7 @@ import utilities.WaitUtility;
 
 public class ManageCategoryTest extends Base{
 	
-	@Test
+	@Test(description = "Verifying the user is able to add new category")
 	
 	public void verifyTheUserIsAbleToAddNewCategory() throws IOException {
 		
@@ -37,11 +37,11 @@ public class ManageCategoryTest extends Base{
 		manage_category_page.selectLeftMenuRadioButton(left_menu);
 		manage_category_page.clickSaveButton();
 		Boolean isAlertDisplayed=manage_category_page.isAlertDisplayed();
-		Assert.assertTrue(isAlertDisplayed);
+		Assert.assertTrue(isAlertDisplayed,Constants.MANAGE_CAT_ADD_NEW_CAT);
 		
 	}
 	
-	@Test
+	@Test(description = "Verifying the user is able to delete category")
 	
 	public void verifyTheUserIsAbleToDeleteCategory() throws IOException{
 		
@@ -57,7 +57,7 @@ public class ManageCategoryTest extends Base{
 		try {
 		manage_category_page.clickDelete(ExcelUtility.getStringData(1, 0, "managecategory"));
 		Boolean isDeleteAlertDisplayed=manage_category_page.isDeleteAlertIsDisplayed();
-		Assert.assertTrue(isDeleteAlertDisplayed);
+		Assert.assertTrue(isDeleteAlertDisplayed,Constants.MANAGE_CAT_DELETE__CAT);
 		}
 		catch (Exception e) {
 			

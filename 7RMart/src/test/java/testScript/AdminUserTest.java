@@ -5,6 +5,7 @@ import java.io.IOException;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 
+import constant.Constants;
 import pages.AdminUserPage;
 import pages.LoginPage;
 import utilities.ExcelUtility;
@@ -12,7 +13,7 @@ import utilities.FakerUtility;
 
 public class AdminUserTest extends Base{
 	
-	@Test(retryAnalyzer = reTry.ReTry.class)
+	@Test(retryAnalyzer = reTry.ReTry.class,description = "Verifying the user is able to add adminuser")
 	
 	public void verifyTheUserIsAbleToAddAdminUser() throws IOException {
 			
@@ -36,7 +37,7 @@ public class AdminUserTest extends Base{
 		admin_user_page.selectUserTypeDropDwon(userType);
 		admin_user_page.clickSaveButton();
 		Boolean isAlertDisplayed=admin_user_page.isAlertDisplayed();
-		Assert.assertTrue(isAlertDisplayed);
+		Assert.assertTrue(isAlertDisplayed,Constants.ADMIN_USER_ADD_ADMIN);
 		
 	}
 
