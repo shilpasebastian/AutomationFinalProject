@@ -57,15 +57,17 @@ WebDriver driver;
 	}
 	
 	
-	public void clickAdminDropDwon() {
+	public HomePage clickAdminDropDwon() {
 		
 		admin_dd.click();
+		return this;
 		
 	}
 	
-	public void clickLogOutButton() {
+	public LoginPage clickLogOutButton() {
 		
 		logout_btn.click();
+		return new LoginPage(driver);
 	}
 	
    public boolean isUserNameFieldDisplayed() {
