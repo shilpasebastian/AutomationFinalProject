@@ -7,12 +7,12 @@
 	<test thread-count="5" name="Test">
 		<parameter name="browser" value="chrome"></parameter>
 		<classes>
-			<!-- <class name="testScript.LoginTest" />-->
-			<!--<class name="testScript.ManageNewsTest" />-->
-			<!--<class name="testScript.AdminUserTest" />-->
-			<!--<class name="testScript.ManageContactTest" />-->
-			<!--<class name="testScript.ManageCategoryTest" />-->
-			<!--<class name="testScript.ManageFooterTest" />-->
+			 <class name="testScript.LoginTest" />
+			 <class name="testScript.ManageNewsTest" />
+			 <class name="testScript.AdminUserTest" />
+			 <class name="testScript.ManageContactTest" />
+			 <class name="testScript.ManageCategoryTest" />
+			<class name="testScript.ManageFooterTest" />
 			<class name="testScript.HomeTest" />
 		</classes>
 	</test> <!--
